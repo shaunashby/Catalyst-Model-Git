@@ -14,7 +14,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Test::More' => 0,
         'Catalyst::Model' => 0,
-        'Git' => 0,
+        'Git::PurePerl' => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Catalyst-Model-Git-*' },

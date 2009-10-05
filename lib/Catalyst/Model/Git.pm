@@ -30,7 +30,7 @@ A model to allow access to a Git repository.
 =cut
 use strict;
 use warnings;
-use Git;
+use Git::PurePerl;
 use Scalar::Util qw/blessed/;
 use Carp qw(confess croak);
 use base 'Catalyst::Model';
