@@ -46,15 +46,24 @@ sub new() {
     
     die __PACKAGE__.": No repository location defined!" unless ($self->repository);
     
-    
+    # Create the interface using Git::PurePerl:
+    $self->{git} = Git::PurePerl->new( directory => $self->repository );
+    $self->{master} = $self->{git}->master;
+    $self->{tree} = $self->{master}->tree;
+    $self->{sha1} = $self->{master}->sha1;
     
     return $self;
 }
 
+sub branch() { shift->{git}->branch; }
+
+sub sha1() { shift->{git}->sha1; }
+
 sub list() {
 	my ($self,@args) = @_;
-    my @items=();
-    return wantarray ? @items : \@items;
+    my @objects=();
+    
+    return wantarray ? @objects : \@objects;
 }
 
 1;
