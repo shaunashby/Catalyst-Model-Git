@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME                => 'Catalyst::Model::Git',
-    AUTHOR              => '"Shaun ASHBY" <"Shaun.Ashby@unige.ch">',
+    AUTHOR              => '"Shaun ASHBY" <"Shaun.Ashby@gmail.com">',
     VERSION_FROM        => 'lib/Catalyst/Model/Git.pm',
     ABSTRACT_FROM       => 'lib/Catalyst/Model/Git.pm',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002

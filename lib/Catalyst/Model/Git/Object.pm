@@ -14,42 +14,24 @@ A class to represent a file or directory in a Git repository.
 
 =head1 METHODS
 
-=over
+=over 8
 
 =cut
-
 use strict;
 use warnings;
-use Carp;
-
-require 5.008;
-
-use vars qw($VERSION $AUTOLOAD);
-
-# Constants:
-use constant XX => 1234;
-
 
 =item C<new()>
 
-Constructor for .
-
+Constructor. Takes a hash of parameters.
+    
 =cut
-
 sub new() {
     my $proto = shift;
     my $class = ref($proto) || $proto;
-    my $self = {};
+    my $self = shift;
+    confess("Must have a hash of parameters!") unless (ref($self) eq 'HASH');
     bless($self,$class);
     return $self;
-}
-
-
-
-sub AUTOLOAD {
-    my $self = shift;
-    my $method = $AUTOLOAD;
-    $method =~ s/.*:://;
 }
 
 1;
@@ -58,8 +40,8 @@ __END__
 
 =back
 
-=head1 AUTHOR/MAINTAINER
+=head1 AUTHOR
 
-Shaun ASHBY, ISDC
+Shaun ASHBY <shaun.ashby@gmail.com>
 
 =cut
